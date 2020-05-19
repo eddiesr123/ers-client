@@ -1,81 +1,46 @@
 import React from 'react';
 import './include/bootstrap';
 import './App.css';
-import { FirstComponent } from './components/my-first-component';
-import SecondComponent from './components/my-second-component';
-import NavComponent from './components/nav-component';
-import { HashRouter, BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { Switch, Route } from 'react-router';
-import { ClickerComponent } from './components/clicker-component';
-import NumComp from './components/num-comps/num-comp';
-import RandomComponent from './components/random-component';
-import {SpinningAtom} from './components/spinning-atom';
-import { LukeComponent } from './components/luke-component';
-import { KHComponent } from './components/kh-component';
-import { SpinnerComponent } from './components/spinner-component';
-import BallComponent from './components/ball-component';
-import { dieRollerComponent } from './components/dice-roller-component';
-import JessicaComponent from './components/jessicas-component';
-import FunComponent from './components/fun-page-component';
-import { MiguelComponent } from './components/miguel-component';
-import { ArrayComponent } from './components/array-component';
-import { PokeComponent } from './components/poke-component';
-import { EdImdbComponent } from './components/ed-imdb-component';
-import { ProgJokes } from './components/prog-jokes';
+import { GetUsersComponent } from './components/getusers-component';
+import Login from './components/login-compnonent';
+import AdminLogin from './components/admin-login-component';
+import { AdminGetUsersComponent } from './components/admin-getusers-component';
+import { HomeComponent } from './components/home-component';
+import { GetAllUsersComponent } from './components/getall';
+import { EmployeePortalComponent } from './components/employee-portal';
+import { AdminPortalComponent } from './components/admin-portal';
+import { GetReimbursementsStatusComponent } from './components/getreimbystatus';
+import { UserGetReimbursementsIdComponent } from './components/usergetreimbursement';
+import { PostReimbursement } from './components/postreimbursement';
+import { GetReimbursementsIdComponent } from './components/getreimbyid';
+import { PatchReimbursement } from './components/resolve-reimbursement';
+import { UpdateUserComponent } from './components/update-user';
 
-
-/*
-  Components
-  Components makeup the abstract structure from which an application can be built.
-  Components are intended to be reusable, flexible sections of a website, that
-  maintain their own state and behavior.
-
-  There are primarily two ways to define a component.  The first, is by extending
-  the React.Component class. The second is a "Function Component" which is used
-  for simpler components that don't need any additional behavior.
-
-  All components require method: render
-
-  The render method returns an HTML-like syntax that is used to then
-  render the component by React. Function components are essentially components
-  that only have a render method.
-*/
 const App: React.FC = () => {
-  return (
-    // render URL as /#/route-name
-    // <BrowserRouter> is the other primary router available
-    // <Switch> - Is a list of Routes that can be rendered
-    // based on the URL context of the router
-    // localhost:3000/#/first then render FirstComponent in the switch
-    <HashRouter>
-      <div>
-        <NavComponent />
-        <Switch>
-          <Route path="/first" component={FirstComponent} />
-          <Route path="/second" component={SecondComponent} />
-          <Route path="/clicker" component={ClickerComponent} />
-          <Route path="/sum" component={NumComp} />
-          <Route path="/random" component={RandomComponent}/>
-          <Route path="/spinning-atom" component={SpinningAtom}/>
-          <Route path="/luke" component={LukeComponent} />
-          <Route path="/kh" component={KHComponent} />
-          <Route path="/spinner" component={SpinnerComponent} />
-          <Route path="/spinning-atom" component={SpinningAtom} />
-          <Route path="/ball" component={BallComponent} />
-          <Route path="/dieRoller" component={dieRollerComponent} />
-          <Route path="/Jessica" component={JessicaComponent} />
-          <Route path="/fungame" component={FunComponent} />
-          <Route path="/miguel" component={MiguelComponent} />
-          <Route path="/arrays" component={ArrayComponent} />
-          <Route path="/poke" component={PokeComponent} />
-          <Route path="/edimdb" component={EdImdbComponent} />
-          <Route path="/prog-jokes" component={ProgJokes} />
-          <Route component={FirstComponent} />
-        </Switch>
-      </div>
-    </HashRouter>
-
-  );
-}
+	return (
+		<div>
+			<HashRouter>
+				<Switch>
+					<Route path="/" exact component={HomeComponent} />
+					<Route path="/userlogin" component={Login} />
+					<Route path="/adminlogin" component={AdminLogin} />
+					<Route path="/user" component={EmployeePortalComponent} />
+					<Route path="/myinfo" component={GetUsersComponent} />
+					<Route path="/reimburementstatus" component={UserGetReimbursementsIdComponent} />
+					<Route path="/postreimbursement" component={PostReimbursement} />
+					<Route path="/admin" component={AdminPortalComponent} />
+					<Route path="/getuserbyid" component={AdminGetUsersComponent} />
+					<Route path="/getusers" component={GetAllUsersComponent} />
+					<Route path="/updateuser" component={UpdateUserComponent} />
+					<Route path="/reimbursementsid" component={GetReimbursementsStatusComponent} />
+					<Route path="/reimbursementsauth" component={GetReimbursementsIdComponent} />
+					<Route path="/resolvereimbursement" component={PatchReimbursement} />
+				</Switch>
+			</HashRouter>
+		</div>
+	);
+};
 
 export default App;

@@ -38,7 +38,6 @@
 
 nav {
   border-bottom: 1px solid #ffffff !important;
-  margin-bottom: 20px;
   -webkit-box-shadow: 1px -12px 28px -1px rgba(0, 0, 0, 0.87);
   -moz-box-shadow: 1px -12px 28px -1px rgba(0, 0, 0, 0.87);
   box-shadow: 1px -12px 28px -1px rgba(0, 0, 0, 0.87);
@@ -46,7 +45,7 @@ nav {
 
 .App {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,78 +67,37 @@ nav {
     transform: rotate(360deg);
   }
 }
-.ball-container {
-  display: flex;
-  padding: 30px;
-  transition: all 500ms linear;
+
+.center {
+  align-content: center;
 }
 
-.ball-container.invert {
-  background: black;
-}
-
-.ball {
-  min-width: 100px;
-  min-height: 100px;
-
-  box-shadow: 10px 10px 20px 10px black,
-    -10px -10px 40px 10px black inset;
-  border-radius: 100%;
-  margin: 0 auto;
-  transition: all 500ms linear;
-}
-
-.invert > .ball {
-  box-shadow: -10px -10px 20px 10px white,
-  10px 10px 40px 10px white inset;
-}
-
-.miguel-display {
-  /* font-family: cursive; */
-  text-align: center;
-  /* width: 40vw; */
-  display: block;
-  height: 10vh;
-  margin: 10vh auto;
-  border:1px solid black;
-}
-
-.miguel-button {
-  display:block;
-  margin: 4vh auto;
-  background: lightcyan;
-}
-.miguel-button-flush {
-  background: lightcoral;
-  display: block;
-  margin: 4vh auto;
-}
-.miguel-button:hover, .miguel-button-flush:hover {
-  background: lightgrey;
-  cursor: grab;
-}
-
-#person-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.person-box {
-  width: 300px;
-  border: 1px solid black;
-  padding: 5px;
-}
-
-.person-box > h3 {
-  text-align: center;
-}
 
 .display-container{
   display: flex;
   flex-direction: column
 }
 
-.goodOleStuff{
-  margin: auto;
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  color: black;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr{background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgba(171, 169, 255, 0.87);
+  color: white;
 }
